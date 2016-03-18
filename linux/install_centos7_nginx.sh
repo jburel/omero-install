@@ -23,8 +23,7 @@ bash -eux step01_centos7_pg_deps.sh
 bash -eux step02_all_setup.sh
 bash -eux step03_all_postgres.sh
 
-cp settings.env step04_all_$OMEROVER.sh ~omero
-su - omero -c "bash -eux step04_all_$OMEROVER.sh"
+su - omero -c "source settings.env && bash -eux step04_all_$OMEROVER.sh"
 
 bash -eux step05_centos7_nginx.sh
 
