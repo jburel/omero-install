@@ -2,8 +2,6 @@
 
 set -e -u -x
 
-source settings.env
-
 #start-install
 
 SERVER=http://downloads.openmicroscopy.org/latest/omero5/server-ice35.zip
