@@ -8,6 +8,9 @@ ARG JAVAVER=openjdk11
 ARG ICEVER=ice36
 ARG PGVER=pg13
 
+RUN dnf clean all
+RUN rm -r /var/cache/dnf
+RUN dnf -y upgrade
 RUN touch /.dockerenv
 ADD omero-install-test.zip /
 RUN dnf -y install unzip && unzip omero-install-test.zip
