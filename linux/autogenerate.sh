@@ -14,7 +14,7 @@ echo "${l}"
 
 #generate the walkthrough for all supported os
 function generate_all() {
-	values=(centos7 debian10 ubuntu1804 ubuntu2004 ubuntu2204 rocky9)
+	values=(centos7 debian10 ubuntu2004 ubuntu2204 rocky9)
 	for os in "${values[@]}"; do
   		echo "${os}"
   		 generate ${os}
@@ -52,8 +52,6 @@ if [[ $OS =~ "centos" ]] ; then
 	N="centos"
 elif [[ $OS =~ "rocky" ]]  ; then
 	N="centos"
-elif [[ $OS =~ "ubuntu1804" ]]  ; then
-	N="ubuntu1804"
 elif [[ $OS =~ "ubuntu" ]]  ; then
 	N="ubuntu"
 fi 
@@ -73,7 +71,7 @@ echo "# install dependencies" >> $file
 # install dependencies
 N=$OS
 if [[ $OS =~ "ubuntu" ]]  ; then
-    N="ubuntu1804"
+    N="ubuntu"
 elif [[ $OS =~ "rocky" ]]  ; then
 	N="centos7"
 fi
