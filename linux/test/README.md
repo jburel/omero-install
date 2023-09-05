@@ -5,8 +5,8 @@ This directory contains Dockerfiles for testing the installation walkthroughs.
 
 For example:
 
-    ./docker-build.sh ubuntu1804
-    docker run --rm -it -p 8080:80 -p 4063:4063 -p 4064:4064 omero_install_test_ubuntu1804
+    ./docker-build.sh ubuntu2204
+    docker run --rm -it -p 8080:80 -p 4063:4063 -p 4064:4064 omero_install_test_ubuntu2204
 
     ./docker-build.sh debian10
     docker run --rm -it -p 8080:80 -p 4063:4063 -p 4064:4064 omero_install_test_debian10
@@ -34,7 +34,7 @@ The walkthrough files should be used for documentation purpose.
 To generate the walkthrough file corresponding to a given OS i.e. `walkthough_OS.sh`,
 run for example:
 
-    OS=centos7 ALL=false bash autogenerate.sh
+    OS=ubuntu2204 ALL=false bash autogenerate.sh
 
 Only the "recommended" requirements will be copied to the walkthrough file.
 When a requirement is modified e.g. Postgres 12 instead of Postgres 11
@@ -54,7 +54,7 @@ To generate a specific walkthrough, run the following command
     OS=debian10 ALL=false bash autogenerate.sh
 
 The possible values are:
-centos7 (default), ubuntu1804, ubuntu2004, debian10
+centos7 (default), ubuntu2204, ubuntu2004, debian10, rocky9
 
 Configuring Java
 ----------------
@@ -62,18 +62,18 @@ Configuring Java
 By default, openjdk11 is installed.
 It is possible to install other versions using the JAVAVER parameter.
 
-For example, to install openjdk11:
+For example, to install openjdk11-devel:
 
-JAVAVER=openjdk1.8 ./docker-build.sh ubuntu1804
+JAVAVER=openjdk11-devel ./docker-build.sh ubuntu2004
 
 The supported values are: 
-openjdk1.8, openjdk1.8-devel, openjdk11 (default), openjdk11-devel
+openjdk11 (default), openjdk11-devel
 
 If you do not want to install Java set JAVAVER to nojava.
 
 To add a new Java version, update the following files: 
 `step01_centos_java_deps.sh`, `step01_ubuntu_java_deps.sh`,
-`step01_ubuntu1804_java_deps.sh`, `step01_debian10_java_deps.sh`
+`step01_ubuntu_java_deps.sh`, `step01_debian10_java_deps.sh`
 and update this README.md.
 
 Configuring Postgres
@@ -84,23 +84,23 @@ It is possible to install other versions using the PGVER parameter.
 
 For example:
     
-    PGVER=pg10 ./docker-build.sh ubuntu1804
+    PGVER=pg12 ./docker-build.sh ubuntu2004
     
 It is not necessary to specify the version when running Ubuntu/Debian image.
 
 For example:
 
-    docker run --rm -it -p 8080:80 -p 4063:4063 -p 4064:4064 omero_install_test_ubuntu1804
+    docker run --rm -it -p 8080:80 -p 4063:4063 -p 4064:4064 omero_install_test_ubuntu2004
 
 
 The supported values are: 
-pg11 (default), pg12 (ubuntu 20.04 only), pg13, pg14
+pg11 (default), pg12 (ubuntu 20.04 only), pg13 (default ubuntu 22.04), pg14
 
 If you do not want to install Postgres set PGVER to nopg.
 
 To add a new Postgres version, update the following files: 
-`step01_centos7_pg_deps.sh`,
-`step01_ubuntu1804_pg_deps.sh`, `step01_ubuntu2004_pg_deps.sh`,
+`step01_centos7_pg_deps.sh`, `step01_rocky9_pg_deps.sh`,
+`step01_ubuntu2204_pg_deps.sh`, `step01_ubuntu2004_pg_deps.sh`,
 `step01_debian10_pg_deps.sh` and update this README.md.
 
 Configuring Ice
@@ -118,7 +118,7 @@ ice36-devel (CentOS 7 only), ice36
 
 To add a new Ice version, update the following files:
 `step01_centos7_ice_venv_deps.sh`, `step01_ubuntu_ice_venv_deps.sh`,
-step01_ubuntu1804_ice_venv_deps.sh`, `step01_ubuntu2004_ice_venv_deps.sh`
+step01_ubuntu2204_ice_venv_deps.sh`, `step01_ubuntu2004_ice_venv_deps.sh`
 `step01_debian10_ice_venv_deps.sh`
 and update this README.md.
 

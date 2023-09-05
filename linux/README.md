@@ -9,7 +9,8 @@ https://docs.openmicroscopy.org/latest/omero/sysadmins/unix/server-installation.
 Copy the files from this directory, then run one of the install scripts,
 
 	bash install_centos7.sh
-	bash install_ubuntu1804.sh
+	bash install_rocky9.sh
+	bash install_ubuntu2204.sh
     bash install_debian10.sh
     bash install_ubuntu2004.sh
 
@@ -23,7 +24,7 @@ Documentation generation
 To generate a walkthrough file corresponding to a given OS, run the
 `autogenerate.sh` script, the OS is specified as a parameter e.g.
 	
-	OS=ubuntu1804 bash autogenerate.sh
+	OS=ubuntu2004 bash autogenerate.sh
 
 The walkthrough file is used for the omero documention e.g.
 https://docs.openmicroscopy.org/latest/omero/sysadmins/unix/server-centos7-ice36.html
