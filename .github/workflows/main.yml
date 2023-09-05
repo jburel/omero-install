@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [rockylinux9, debian10, ubuntu1804, ubuntu2004, ubuntu2204]
+        os: [rockylinux9, debian10, ubuntu2004, ubuntu2204]
         pg: [pg13, pg14]
         exclude:
           - os: ubuntu2204
