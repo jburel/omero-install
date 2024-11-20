@@ -10,7 +10,7 @@ set -eux
 if [ $OMEROVER == "latest" ]; then
 	#start-release-ice36
 	cd /opt/omero/server
-	SERVER=https://downloads.openmicroscopy.org/omero/5.6/server-ice36.zip
+	SERVER=https://github.com/jburel/openmicroscopy/releases/download/v5.6.14rc1/openmicroscopy-5.6.14rc1-ice36.zip
 	wget -q $SERVER -O OMERO.server-ice36.zip
 	unzip -q OMERO.server*
 	#end-release-ice36
