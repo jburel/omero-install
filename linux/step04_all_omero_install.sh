@@ -14,7 +14,7 @@ if [ $OMEROVER == "latest" ]; then
 	wget -q $SERVER -O OMERO.server-5.6.14rc1-ice36.zip
 	unzip -q OMERO.server*
 	#end-release-ice36
-	rm OMERO.server-ice36.zip
+	rm OMERO.server-5.6.14rc1-ice36.zip
 fi
 
 #start-link
