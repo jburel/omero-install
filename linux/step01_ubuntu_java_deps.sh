@@ -1,5 +1,6 @@
 #!/bin/bash
-JAVAVER=${JAVAVER:-openjdk11}
+#JAVAVER=${JAVAVER:-openjdk1.8}
+JAVAVER=openjdk1.8
 # install java
 if [ "$JAVAVER" = "openjdk1.8" ]; then
     apt-get update
