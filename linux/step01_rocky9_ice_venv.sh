@@ -14,4 +14,10 @@ $VENV_SERVER/bin/pip install --upgrade pip
 $VENV_SERVER/bin/pip install https://github.com/glencoesoftware/zeroc-ice-py-rhel9-x86_64/releases/download/20230830/zeroc_ice-3.6.5-cp39-cp39-linux_x86_64.whl
 # Install server dependencies
 $VENV_SERVER/bin/pip install omero-server
+
+# Test omero-py PR
+$VENV_SERVER/bin/pip install ipython
+
+$VENV_SERVER/bin/pip install -U $VENV_SERVER/bin/pip git+https://github.com/sbesson/omero-py.git@urllib3_removal
+
 #end-ice-py
