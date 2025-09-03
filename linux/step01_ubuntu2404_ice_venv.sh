@@ -20,7 +20,7 @@ $VENV_SERVER/bin/pip install omero-server
 # Test omero-py PR
 $VENV_SERVER/bin/pip install ipython
 
-$VENV_SERVER/bin/pip install -U $VENV_SERVER/bin/pip git+https://github.com/sbesson/omero-py.git@urllib3_removal
+$VENV_SERVER/bin/pip install -U git+https://github.com/sbesson/omero-py.git@urllib3_removal
 
 
 #end-ice-py
