@@ -33,7 +33,8 @@ bash -eux step02_all_setup.sh
 
 bash -eux step03_all_postgres.sh
 
-cp settings.env step04_all_omero.sh setup_omero_db.sh ~omero-server
+ls
+cp test.py settings.env step04_all_omero.sh setup_omero_db.sh ~omero-server
 
 bash -eux step01_ubuntu2204_ice_venv.sh
 bash -eux step04_all_omero_install.sh
