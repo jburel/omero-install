@@ -6,4 +6,5 @@ client.closeSession()
 #uc.run()
 import requests
 r = requests.get('https://www.glencoesoftware.com/')
-print(r.status_code)
+if r.status_code != 200:
+    raise Exception("Code should be 200")
